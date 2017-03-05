@@ -142,18 +142,20 @@ namespace SENG403
             //keep to avoid error
         }
 
+        // The method used when the timer is ticking.
         void timer_Tick(object sender, EventArgs e)
         {
             timeLabel.Content = DateTime.Now.ToLongTimeString();
             int i = 0;
             try
             {
+                // The loop that checks the list every second for an alarm that is equal to the current time
+                // If the alarm exists, ring the alarm and potentially remove it from the list.
                 while (i < alarmLinkedList.Count)
                 {
 
                     if (alarmLinkedList.ElementAt(i).checkAlarm(DateTime.Now.ToString("hh:mm:ss tt")))
                     {
-                       
                         alarmLinkedList.ElementAt(i).ringAlarm(this, alarmLinkedList.ElementAt(i));
                         alarmLinkedList.Remove(alarmLinkedList.ElementAt(i));
                         alarmList.Items.RemoveAt(i);
@@ -360,6 +362,7 @@ namespace SENG403
                 alarmWindow.title.Text = a.alarmID;
                 alarmWindow.description.Text = a.alarmDescription;
                 alarmWindow.Show();
+                
                 // Play a simple ringtone sound
                
                 // Open the window that called the ringAlarm function
