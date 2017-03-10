@@ -13,11 +13,9 @@
                 <GradientStop Color="#FFFF"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBox x:Name="secondsBox" HorizontalAlignment="Left" Height="98" Margin="404,82,0,0" TextWrapping="Wrap" Text="0" TextAlignment="Center" FontSize="70" VerticalAlignment="Top" Width="81"/>
-        <TextBox x:Name="tensSecondsBox" HorizontalAlignment="Left" Height="98" Margin="303,82,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="81" FontSize="70" TextAlignment="Center"/>
-        <Label x:Name="colonBox" Content=":" HorizontalAlignment="Left" Margin="260,82,0,0" VerticalAlignment="Top" Height="98" FontSize="70"/>
-        <TextBox x:Name="minutesBox" HorizontalAlignment="Left" Height="98" Margin="158,82,0,0" TextWrapping="Wrap" Text="0" TextAlignment="Center" FontSize="70" VerticalAlignment="Top" Width="81"/>
-        <Label x:Name="label" Content="Edit Snooze Time Period" HorizontalAlignment="Left" Margin="158,10,0,0" VerticalAlignment="Top" Height="45" Width="327" FontSize="28"/>
+        <TextBox x:Name="minutesBox" HorizontalAlignment="Left" Height="98" Margin="158,82,0,0" TextWrapping="Wrap" Text="0" TextAlignment="Center" FontSize="70" VerticalAlignment="Top" Width="327"/>
+        <Label x:Name="instructionsLabel" Content="Enter the new Snooze Period" HorizontalAlignment="Left" Margin="134,10,0,0" VerticalAlignment="Top" Height="45" Width="388" FontSize="28"/>
+        <Label x:Name="minutesLabel" Content="min" HorizontalAlignment="Left" Margin="490,110,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.091,-0.677" Height="65" FontSize="40"/>
 
     </Grid>
 </Window>
