@@ -40,6 +40,46 @@ namespace SENG403 {
     /// </summary>
     public partial class Window2 : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
+        
+        #line 9 "..\..\Window2.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Grid analogGrid;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 10 "..\..\Window2.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Image clockface;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 11 "..\..\Window2.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Image hours;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 12 "..\..\Window2.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Image minutes;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 13 "..\..\Window2.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Image seconds;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -68,6 +108,24 @@ namespace SENG403 {
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
         void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
+            switch (connectionId)
+            {
+            case 1:
+            this.analogGrid = ((System.Windows.Controls.Grid)(target));
+            return;
+            case 2:
+            this.clockface = ((System.Windows.Controls.Image)(target));
+            return;
+            case 3:
+            this.hours = ((System.Windows.Controls.Image)(target));
+            return;
+            case 4:
+            this.minutes = ((System.Windows.Controls.Image)(target));
+            return;
+            case 5:
+            this.seconds = ((System.Windows.Controls.Image)(target));
+            return;
+            }
             this._contentLoaded = true;
         }
     }

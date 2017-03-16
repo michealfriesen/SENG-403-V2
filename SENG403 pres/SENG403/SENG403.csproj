@@ -115,12 +115,13 @@
     <Resource Include="Resources\alarmclockbg.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\blankAnalog.png" />
+    <Resource Include="Resources\Clock-Face.png" />
+    <Content Include="Resources\ringtone1.wav" />
     <Resource Include="Resources\hours.png" />
+    <Resource Include="Resources\seconds.png" />
+    <Resource Include="Resources\blankAnalog.png" />
     <Resource Include="Resources\minute.png" />
-    <Resource Include="Resources\flat-wall.jpg" />
     <Resource Include="Resources\abstract-gradient-circle-wallpaper.jpg" />
-    <Resource Include="Resources\Clockface.jpg" />
     <Content Include="Resources\ringtone1.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
