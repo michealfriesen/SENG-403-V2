@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/ringtone1.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/ringtone1.mp3")]
 
 

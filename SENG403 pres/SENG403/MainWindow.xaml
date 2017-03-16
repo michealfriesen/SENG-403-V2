@@ -7,17 +7,17 @@
         mc:Ignorable="d"
         Title="mainWindow" Height="350" Width="525" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowState="Maximized">
     <Window.Background>
-        <SolidColorBrush Color="#2c3e50" />
+        <SolidColorBrush Color="#3F3F3F" />
     </Window.Background>
     <Viewbox>
-        <DockPanel LastChildFill="True" Width="734">
+        <DockPanel LastChildFill="True" Width="862">
             <Grid x:Name="alarmListGrid" DockPanel.Dock="Bottom" Height="136">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0*"/>
                     <ColumnDefinition Width="523*"/>
                     <ColumnDefinition Width="32*"/>
                 </Grid.ColumnDefinitions>
-                <ListView x:Name="alarmList" Height="116" Margin="100,-50,44,70" Grid.Column="1" SelectionChanged="alarmList_SelectionChanged">
+                <ListView x:Name="alarmList" Margin="35,0,206,40" Grid.Column="1" SelectionChanged="alarmList_SelectionChanged">
                     <ListView.View>
                         <GridView/>
                     </ListView.View>
@@ -29,37 +29,37 @@
                         </ContextMenu>
                     </ListView.ContextMenu>
                 </ListView>
+                <Grid x:Name="addAlarmGrid" Height="222" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="665,-96,10,10" >
+                    <TextBox x:Name="alarmNameTextBox" HorizontalAlignment="Left" Height="23" Margin="10,32,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
+                    <TextBox x:Name="alarmDescriptionTextBox" HorizontalAlignment="Left" Height="23" Margin="10,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <Label x:Name="label" Content="Time:" HorizontalAlignment="Left" Margin="7,94,0,0" VerticalAlignment="Top" Foreground="#ecf0f1"/>
+                    <ComboBox x:Name="hourComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="10,116,0,0"/>
+                    <ComboBox x:Name="minuteComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Margin="66,116,0,0"/>
+                    <ComboBox x:Name="amPMComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="114,116,0,0" SelectionChanged="amPMComboBox_SelectionChanged"/>
+                    <Label x:Name="label1" Content="Date:" HorizontalAlignment="Left" Margin="15,153,0,0" VerticalAlignment="Top" Foreground="#ecf0f1"/>
+                    <DatePicker x:Name="dateOfAlarm" HorizontalAlignment="Left" Margin="53,155,0,0" VerticalAlignment="Top" Width="116"/>
+                    <Label x:Name="label_Copy" Content=":" HorizontalAlignment="Left" Margin="52,112,0,0" VerticalAlignment="Top" Foreground="#ecf0f1"/>
+                    <Button x:Name="addButton" Content="Add Alarm" HorizontalAlignment="Left" Margin="111,191,0,0" VerticalAlignment="Top" Width="63" Click="addButton_Click" Height="21" Background="#3498db" BorderBrush="Black" Foreground="#ecf0f1"/>
+                    <Label x:Name="label_Copy1" Content="Alarm Description:" HorizontalAlignment="Left" Margin="7,55,0,0" VerticalAlignment="Top" Foreground="#ecf0f1" />
+                    <Label x:Name="label_Copy2" Content="Alarm Name:" HorizontalAlignment="Left" Margin="7,9,0,0" VerticalAlignment="Top" Foreground="#ecf0f1"/>
+                    <Button x:Name="cancel" Content="cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="60,191,0,0" Height="22" Click="cancel_Click" Background="#3498db" BorderBrush="Black" Foreground="#ecf0f1"/>
+                    <Button x:Name="save" Content="save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Margin="5,191,0,0" Height="22" Click="save_Click" Background="#3498db" BorderBrush="Black" Foreground="#ecf0f1"/>
+                </Grid>
             </Grid>
             <Grid x:Name="timeGrid" Width="341" Margin="0,0,0,46">
-                <Grid x:Name="digitalGrid" Visibility="Visible">
-                    <Label x:Name="timeLabel" Content="Time here" HorizontalAlignment="Left" Margin="20,166,0,0" VerticalAlignment="Top" Height="73" Width="311" FontSize="50" Foreground="#ecf0f1" />
+                <Grid x:Name="digitalGrid" Visibility="Visible" Margin="0,20,0,-20">
+                    <Label x:Name="timeLabel" Content="Time here" HorizontalAlignment="Left" Margin="20,166,0,0" VerticalAlignment="Top" Height="73" Width="311" FontSize="50" Foreground="#FFFFFF" FontWeight="Bold" />
+
                 </Grid>
 
                 <Grid x:Name="analogGrid" Visibility="Hidden" VerticalAlignment="Center">
-                    <Image x:Name="clockface" RenderOptions.BitmapScalingMode="HighQuality" Source="Resources/blankAnalog.PNG" RenderTransformOrigin="0.5,0.5" />
-                    <Image x:Name="hours" RenderOptions.BitmapScalingMode="HighQuality" Source="Resources/hours.PNG" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" HorizontalAlignment="Center" Height="144" Margin="100" Width="144"/>
-                    <Image x:Name="minutes" RenderOptions.BitmapScalingMode="HighQuality" Source="Resources/minute.PNG" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" HorizontalAlignment="Center" Height="194" Margin="100" Width="194"/>
-                    <Image x:Name="seconds" RenderOptions.BitmapScalingMode="HighQuality" Source="Resources/hours.PNG" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="154" Margin="100" Width="154"/>
+                    <Image x:Name="clockface" RenderOptions.BitmapScalingMode="HighQuality" Source="Resources/Clock-Face.png" RenderTransformOrigin="0.5,0.5" />
+                    <Image x:Name="hours" RenderOptions.BitmapScalingMode="HighQuality" Source="Resources/hours.PNG" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" HorizontalAlignment="Center" Height="200" Margin="100" Width="200"/>
+                    <Image x:Name="minutes" RenderOptions.BitmapScalingMode="HighQuality" Source="Resources/minute.PNG" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" HorizontalAlignment="Center" Height="200" Margin="100" Width="200"/>
+                    <Image x:Name="seconds" RenderOptions.BitmapScalingMode="HighQuality" Source="Resources/seconds.PNG" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Height="200" Margin="100" Width="200"/>
 
                 </Grid>
-                <CheckBox x:Name="analogCheckBox" Content="Analog Clock" HorizontalAlignment="Left" Margin="244,15,0,0" VerticalAlignment="Top" />
-            </Grid>
-
-            <Grid x:Name="addAlarmGrid" DockPanel.Dock="Left" Height="222" VerticalAlignment="Center" Width="192">
-                <TextBox x:Name="alarmNameTextBox" HorizontalAlignment="Left" Height="23" Margin="10,32,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
-                <TextBox x:Name="alarmDescriptionTextBox" HorizontalAlignment="Left" Height="23" Margin="10,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                <Label x:Name="label" Content="Time:" HorizontalAlignment="Left" Margin="7,94,0,0" VerticalAlignment="Top" Foreground="#ecf0f1"/>
-                <ComboBox x:Name="hourComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="10,116,0,0"/>
-                <ComboBox x:Name="minuteComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Margin="66,116,0,0"/>
-                <ComboBox x:Name="amPMComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="114,116,0,0" SelectionChanged="amPMComboBox_SelectionChanged"/>
-                <Label x:Name="label1" Content="Date:" HorizontalAlignment="Left" Margin="7,143,0,0" VerticalAlignment="Top" Foreground="#ecf0f1"/>
-                <DatePicker x:Name="dateOfAlarm" HorizontalAlignment="Left" Margin="45,145,0,0" VerticalAlignment="Top" Width="116"/>
-                <Label x:Name="label_Copy" Content=":" HorizontalAlignment="Left" Margin="52,112,0,0" VerticalAlignment="Top" Foreground="#ecf0f1"/>
-                <Button x:Name="addButton" Content="Add Alarm" HorizontalAlignment="Left" Margin="103,181,0,0" VerticalAlignment="Top" Width="63" Click="addButton_Click" Height="21" Background="#3498db" BorderBrush="Black" Foreground="#ecf0f1"/>
-                <Label x:Name="label_Copy1" Content="Alarm Description:" HorizontalAlignment="Left" Margin="7,51,0,0" VerticalAlignment="Top" Foreground="#ecf0f1" />
-                <Label x:Name="label_Copy2" Content="Alarm Name:" HorizontalAlignment="Left" Margin="7,9,0,0" VerticalAlignment="Top" Foreground="#ecf0f1"/>
-                <Button x:Name="cancel" Content="cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="52,181,0,0" Height="22" Click="cancel_Click" Background="#3498db" BorderBrush="Black" Foreground="#ecf0f1"/>
-                <Button x:Name="save" Content="save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Margin="-3,181,0,0" Height="22" Click="save_Click" Background="#3498db" BorderBrush="Black" Foreground="#ecf0f1"/>
+                <CheckBox x:Name="analogCheckBox" Content="Analog Clock" HorizontalAlignment="Left" Margin="101,0,0,0" VerticalAlignment="Top" Foreground="#FFFFFF" />
             </Grid>
         </DockPanel>
     </Viewbox>
