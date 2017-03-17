@@ -21,9 +21,6 @@ namespace SENG403
     /// </summary>
     public partial class AlarmWindow : Window
     {
-
-        editSnoozeTime snoozeTimeObject = new editSnoozeTime();
-
         private DispatcherTimer timer;
 
     
@@ -35,6 +32,12 @@ namespace SENG403
 
             int SnoozeTime = int.Parse(editSnoozeTime.snoozeTime); 
             timer = new DispatcherTimer(); // TIMER OBJECT FOR DispatcherTimer CLASS
+
+            // 
+            // Checking to see if user changed snooze time or not.
+            // If user didn't change time period, then keep it as 5 seconds
+            // If user did change timer period, change it to entered value. 
+            //
 
             if (editSnoozeTime.snoozeTime == "5"){
 

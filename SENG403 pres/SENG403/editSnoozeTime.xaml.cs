@@ -19,13 +19,19 @@ namespace SENG403
     /// </summary>
     public partial class editSnoozeTime : Window {
 
-        public static string snoozeTime = "5";
+        public static string snoozeTime = "5"; // DEFAULT SNOOZE TIME PERIOD OF 5 SECONDS
 
+        // CONSTRUCTOR
 
         public editSnoozeTime() {
 
             InitializeComponent();
          }
+
+        //
+        // WHEN USER PRESSES ENTER BUTTON, SCREEN IS CLOSED AND VALUE ENTERED IN TEXTBOX
+        // IS PLACED INTO snoozeTime VARIABLE
+        //
 
         private void enterButton_Click(object sender, RoutedEventArgs e){
 
@@ -33,6 +39,9 @@ namespace SENG403
             this.Close();
             Console.WriteLine("The value entered is: " + snoozeTime);
         }
+
+        // WHEN USER PRESSES ENTER KEY, SCREEN IS CLOSED AND VALUE ENTERED IN TEXTBOX
+        // IS PLACED INTO snoozeTime VARIABLE
 
         private void minutesBox_KeyDown(object sender, KeyEventArgs e){
 
