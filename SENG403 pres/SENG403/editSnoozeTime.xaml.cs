@@ -19,12 +19,31 @@ namespace SENG403
     /// </summary>
     public partial class editSnoozeTime : Window {
 
-        AlarmWindow alarmWindowObject;
+        public static string snoozeTime = "5";
+
 
         public editSnoozeTime() {
 
             InitializeComponent();
-            alarmWindowObject = new AlarmWindow();
+         }
+
+        private void enterButton_Click(object sender, RoutedEventArgs e){
+
+            snoozeTime = minutesBox.Text;
+            this.Close();
+            Console.WriteLine("The value entered is: " + snoozeTime);
+        }
+
+        private void minutesBox_KeyDown(object sender, KeyEventArgs e){
+
+            if (e.Key == Key.Enter)
+            {
+
+                this.Close();
+                snoozeTime = minutesBox.Text;
+                Console.WriteLine("The value entered is: " + snoozeTime);
+
+            }
         }
     }
 }

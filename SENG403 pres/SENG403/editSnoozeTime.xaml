@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SENG403"
         mc:Ignorable="d"
-        Title="Edit Snooze Time" Height="300" Width="611.881">
+        Title="Edit Snooze Time" Height="345.087" Width="611.881">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -13,9 +13,10 @@
                 <GradientStop Color="#FFFF"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <TextBox x:Name="minutesBox" HorizontalAlignment="Left" Height="98" Margin="158,82,0,0" TextWrapping="Wrap" Text="0" TextAlignment="Center" FontSize="70" VerticalAlignment="Top" Width="327"/>
+        <TextBox x:Name="minutesBox" HorizontalAlignment="Left" Height="98" Margin="158,82,0,0" TextWrapping="Wrap" Text="0" TextAlignment="Center" FontSize="70" VerticalAlignment="Top" Width="327" KeyDown="minutesBox_KeyDown"/>
         <Label x:Name="instructionsLabel" Content="Enter the new Snooze Period" HorizontalAlignment="Left" Margin="134,10,0,0" VerticalAlignment="Top" Height="45" Width="388" FontSize="28"/>
-        <Label x:Name="minutesLabel" Content="min" HorizontalAlignment="Left" Margin="490,110,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.091,-0.677" Height="65" FontSize="40"/>
+        <Label x:Name="minutesLabel" Content="sec" HorizontalAlignment="Left" Margin="490,110,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.091,-0.677" Height="65" FontSize="40"/>
+        <Button x:Name="enterButton" Content="Enter" HorizontalAlignment="Left" Margin="261,219,0,0" VerticalAlignment="Top" Width="124" Height="39" RenderTransformOrigin="0.254,0.497" Click="enterButton_Click"/>
 
     </Grid>
 </Window>
