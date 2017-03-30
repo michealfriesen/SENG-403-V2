@@ -51,7 +51,6 @@ namespace SENG403
             }
         }
 
-
         // WHEN SNOOZE BUTTON IS PRESSED, ALARMWINDOW IS HIDDEN AND TIMER COUNTDOWN IS STARTED
         public void Snooze_Click(object sender, RoutedEventArgs e)
         {
@@ -64,11 +63,12 @@ namespace SENG403
         // AS SOON AS TIMER IS DONE, timer_Tick METHOD IS CALLED AND MAKES ALARM WINDOW REAPPEAR
         private void timer_Tick(object sender, EventArgs e)
         {
-            if (buttonClicked == 0)
-            {
+            if (buttonClicked == 0){
+                SystemSounds.Exclamation.Play();
                 this.Show();
             }
             else {
+
                 this.Close();
             }
         }
