@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Media;
-
+using System.IO;
 
 namespace SENG403
 {
@@ -59,8 +59,17 @@ namespace SENG403
                 Header = "Date",
                 DisplayMemberBinding = new Binding("alarmDate")
             });
+            gridView.Columns.Add(new GridViewColumn
+            {
+                Header = "Repeat Daily",
+                DisplayMemberBinding = new Binding("repeatDaily")
+            });
+
+            readTextToList();
+
             System.Windows.Threading.DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(1);
+
             timer.Tick += timer_Tick; 
             timer.Start();
 
@@ -82,6 +91,9 @@ namespace SENG403
 
         }
 
+        private String path = Directory.GetCurrentDirectory();
+
+
         private void AnalogCheckBox_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -95,6 +107,7 @@ namespace SENG403
         {
             if (e.Key == Key.Escape)
             {
+                saveAlarmToText(alarmLinkedList);
                 Application.Current.Shutdown();
             }
             
@@ -154,11 +167,14 @@ namespace SENG403
                 while (i < alarmLinkedList.Count)
                 {
 
-                    if (alarmLinkedList.ElementAt(i).checkAlarm(DateTime.Now.ToString("hh:mm:ss tt")))
+                    if (alarmLinkedList.ElementAt(i).checkAlarm(DateTime.Now.ToString("hh:mm:ss tt")) && alarmLinkedList.ElementAt(i).checkDate(DateTime.Now.ToString("yyyy-MM-dd")))
                     {
                         alarmLinkedList.ElementAt(i).ringAlarm(this, alarmLinkedList.ElementAt(i));
-                        alarmLinkedList.Remove(alarmLinkedList.ElementAt(i));
-                        alarmList.Items.RemoveAt(i);
+                        if (alarmLinkedList.ElementAt(i).repeatDaily == false)
+                        {
+                            alarmLinkedList.Remove(alarmLinkedList.ElementAt(i));
+                            alarmList.Items.RemoveAt(i);
+                        }
 
                     }
                     else
@@ -197,7 +213,96 @@ namespace SENG403
         {
             //keep to avoid error
         }
-    
+
+
+        private void RepeatAlarm_Click(object sender, RoutedEventArgs e)
+        {
+            if (alarmList.SelectedIndex == -1)
+            {
+                return;
+            }
+            else
+            {
+                try
+                {
+                    if (alarmLinkedList.ElementAt(alarmList.SelectedIndex).repeatDaily == true)
+                    {
+                        alarmLinkedList.ElementAt(alarmList.SelectedIndex).repeatDaily = false;
+                    }
+                    else
+                    {
+                        alarmLinkedList.ElementAt(alarmList.SelectedIndex).repeatDaily = true;
+                    }
+                    alarmList.Items.Clear();
+                    // Repopulate the list
+                    for (int i = 0; i <= alarmLinkedList.Count; i++)
+                    {
+                        alarmList.Items.Add(alarmLinkedList.ElementAt(i));
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
+                }
+            }
+        }
+
+        private void saveAlarmToText(LinkedList<alarmObject> listOfAlarms)
+        {
+
+            string lines = "";
+            System.IO.StreamWriter file = new System.IO.StreamWriter(path + "\\try.csv");
+            int i = 0;
+            while (i < alarmLinkedList.Count)
+            {
+                string alarmID = alarmLinkedList.ElementAt(i).alarmID;
+                string alarmDesc = alarmLinkedList.ElementAt(i).alarmDescription;
+                string alarmTime = alarmLinkedList.ElementAt(i).alarmTime;
+                string alarmDate = alarmLinkedList.ElementAt(i).alarmDate;
+                string alarmRepeat = alarmLinkedList.ElementAt(i).repeatDaily.ToString();
+                lines = alarmID + "," + alarmDesc + "," + alarmTime + "," + alarmDate + "," + alarmRepeat;
+
+                file.WriteLine(lines);
+                lines = "";
+                i++;
+            }
+
+            file.Close();
+
+        }
+
+        private void readTextToList()
+        {
+
+
+            string[] lines = System.IO.File.ReadAllLines(path + "\\try.csv");
+
+
+            foreach (string line in lines)
+            {
+                string[] splitString = line.Split(',');
+                Boolean repeat = false;
+
+                if (splitString[4].ToUpper() == "TRUE")
+                {
+                    repeat = true;
+                }
+
+                alarmObject newAlarm = new alarmObject { alarmID = splitString[0], alarmDescription = splitString[1], alarmTime = splitString[2], alarmDate = splitString[3], repeatDaily = repeat };
+                this.alarmList.Items.Add(newAlarm);
+                // Adds an alarm to the linked list
+                try
+                {
+                    alarmLinkedList.AddLast(newAlarm);
+                    saveAlarmToText(alarmLinkedList);
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
+                }
+            }
+        }
+
         private void EditAlarm_Click(object sender, RoutedEventArgs e)
         {
             if(alarmList.SelectedIndex == -1)
@@ -209,6 +314,13 @@ namespace SENG403
                 try
                 {
                     temp_alarm = alarmLinkedList.ElementAt(alarmList.SelectedIndex);
+                    alarmNameTextBox.Text = temp_alarm.alarmID;
+                    alarmDescriptionTextBox.Text = temp_alarm.alarmDescription;
+                    dateOfAlarm.Text = temp_alarm.alarmDate;
+
+                    addAlarmGrid.Visibility = Visibility.Visible;
+                    showAlarmGrid.Visibility = Visibility.Hidden;
+
                     save.Visibility = Visibility.Visible;
                     cancel.Visibility = Visibility.Visible;
                     addButton.Visibility = Visibility.Hidden;
@@ -256,6 +368,9 @@ namespace SENG403
             save.Visibility = Visibility.Hidden;
             cancel.Visibility = Visibility.Hidden;
             addButton.Visibility = Visibility.Visible;
+
+            addAlarmGrid.Visibility = Visibility.Hidden;
+            showAlarmGrid.Visibility = Visibility.Visible;
         }
 
         private void save_Click(object sender, RoutedEventArgs e)
@@ -288,11 +403,28 @@ namespace SENG403
                 save.Visibility = Visibility.Hidden;
                 cancel.Visibility = Visibility.Hidden;
                 addButton.Visibility = Visibility.Visible;
+
+                addAlarmGrid.Visibility = Visibility.Hidden;
+                showAlarmGrid.Visibility = Visibility.Visible;
             }
             else
             {
                 MessageBox.Show("Invalid input");
             }
+
+        }
+
+
+        // Method for showing the alarm grid display
+        private void showAlarmGrid_Click(object sender, RoutedEventArgs e)
+        {
+            addAlarmGrid.Visibility = Visibility.Visible;
+            showAlarmGrid.Visibility = Visibility.Hidden;
+            
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
 
         }
 
@@ -306,7 +438,7 @@ namespace SENG403
             if (alarmName.Length > 0 && alarmDesc.Length > 0 && alarmSched.Length > 0 && alarmDay.Length > 0)
             {
                 // Adds an alarm to the list displayer
-                alarmObject newAlarm = new alarmObject { alarmID = alarmName, alarmDescription = alarmDesc, alarmTime = alarmSched, alarmDate = alarmDay };
+                alarmObject newAlarm = new alarmObject { alarmID = alarmName, alarmDescription = alarmDesc, alarmTime = alarmSched, alarmDate = alarmDay, repeatDaily = false};
                 this.alarmList.Items.Add(newAlarm);
                 // Adds an alarm to the linked list
                 try
@@ -317,9 +449,13 @@ namespace SENG403
                 {
                     Console.WriteLine(exception.Message);
                 }
+                saveAlarmToText(alarmLinkedList);
 
                 MessageBox.Show("Alarm Added!");
                 clearControls();
+                addAlarmGrid.Visibility = Visibility.Hidden;
+                showAlarmGrid.Visibility = Visibility.Visible;
+
             }
             else
             {
@@ -334,13 +470,25 @@ namespace SENG403
             public string alarmDescription { get; set; }
             public string alarmTime { get; set; }
             public string alarmDate { get; set; }
-
+            public Boolean repeatDaily { get; set; }
             // TODO: add date checker
             public Boolean checkAlarm(string time)
             {
                 string[] splitString = this.alarmTime.Split(' ');
                 string comparer = splitString[0] + ":00 " + splitString[1];
                 if ( comparer == time)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            public Boolean checkDate(string date)
+            {
+                if (date == this.alarmDate)
                 {
                     return true;
                 }
@@ -380,5 +528,7 @@ namespace SENG403
         
 
         }
+
+
     }
 }

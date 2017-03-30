@@ -9,12 +9,12 @@
     
     <Grid>
         <Grid.Background>
-            <SolidColorBrush Color="#ecf0f1" />
+            <SolidColorBrush Color="#3498db" />
         </Grid.Background>
-        <Button x:Name="dismiss_button" Content="Dismiss" HorizontalAlignment="Left" Margin="45,133,0,0" VerticalAlignment="Top" Width="86" Height="49" Background="#2c3e50" BorderBrush="#95a5a6" Foreground="White" Click="Dismiss_Click" />
-        <Button x:Name="snooze_button" Content="Snooze" HorizontalAlignment="Left" Margin="164,133,0,0" VerticalAlignment="Top" Width="86" Height="49" Background="#2c3e50" BorderBrush="#95a5a6" Foreground="White" Click="Snooze_Click"/>
-        <TextBlock x:Name="title" HorizontalAlignment="Left" Margin="45,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="205" FontSize="20"  Foreground="#2c3e50" TextAlignment="Center" FontFamily="Rockwell Extra Bold"><Run Text="Default Title" /><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-        <TextBlock x:Name="description" HorizontalAlignment="Left" Margin="45,85,0,0" TextWrapping="Wrap" Text="Default Description" VerticalAlignment="Top" Width="205" Foreground="#2c3e50" Height="40" TextAlignment="Center" FontFamily="Rockwell Extra Bold"/>
+        <Button x:Name="dismiss_button" Content="Dismiss" HorizontalAlignment="Left" Margin="45,133,0,0" VerticalAlignment="Top" Width="86" Height="49" Background="#3F3F3F" BorderBrush="#95a5a6" Foreground="White" Click="Dismiss_Click" />
+        <Button x:Name="snooze_button" Content="Snooze" HorizontalAlignment="Left" Margin="164,133,0,0" VerticalAlignment="Top" Width="86" Height="49" Background="#3F3F3F" BorderBrush="#95a5a6" Foreground="White" Click="Snooze_Click"/>
+        <TextBlock x:Name="title" HorizontalAlignment="Left" Margin="45,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="205" FontSize="20"  Foreground="#FFFFFF" TextAlignment="Center" FontFamily="Rockwell Extra Bold"><Run Text="Default Title" /><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="description" HorizontalAlignment="Left" Margin="45,85,0,0" TextWrapping="Wrap" Text="Default Description" VerticalAlignment="Top" Width="205" Foreground="#FFFFFF" Height="40" TextAlignment="Center" FontFamily="Rockwell Extra Bold"/>
 
 
     </Grid>
