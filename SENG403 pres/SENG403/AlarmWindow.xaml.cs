@@ -54,6 +54,7 @@ namespace SENG403
             
             if (buttonClicked == 0)
             {
+                SystemSounds.Exclamation.Play();
                 this.Show();
             }
             else {

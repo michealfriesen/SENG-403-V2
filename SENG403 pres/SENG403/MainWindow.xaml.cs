@@ -510,9 +510,9 @@ namespace SENG403
                 alarmWindow.title.Text = a.alarmID;
                 alarmWindow.description.Text = a.alarmDescription;
                 alarmWindow.Show();
-                
+
                 // Play a simple ringtone sound
-               
+                SystemSounds.Exclamation.Play();
                 // Open the window that called the ringAlarm function
             }
         }
