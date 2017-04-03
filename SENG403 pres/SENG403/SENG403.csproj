@@ -118,7 +118,6 @@
     <Resource Include="Resources\blankAnalog.png" />
     <Resource Include="Resources\hours.png" />
     <Resource Include="Resources\minute.png" />
-    <Content Include="Resources\ringtone1.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
