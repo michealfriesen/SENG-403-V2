@@ -28,6 +28,8 @@ namespace SENG403
         private LinkedList<alarmObject> alarmLinkedList;
         alarmObject temp_alarm;
 
+        public static SoundPlayer mySound = new SoundPlayer(@"darthVader.wav");
+
 
         public MainWindow()
         {
@@ -328,7 +330,6 @@ namespace SENG403
         // Object representing the alarm object.
         private class alarmObject{
 
-            SoundPlayer mySound = new SoundPlayer(@"C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\bin\Debug\darthVader");
             // Instance variables
             public string alarmID { get; set; }
             public string alarmDescription { get; set; }
@@ -363,7 +364,7 @@ namespace SENG403
                 alarmWindow.description.Text = a.alarmDescription;
                 alarmWindow.Show();
                 // Play a simple ringtone sound
-                mySound.Play();
+                mySound.PlayLooping();
                 // Open the window that called the ringAlarm function
             }
         }

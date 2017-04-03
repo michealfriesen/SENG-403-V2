@@ -166,3 +166,21 @@ C:\Users\Mike\Desktop\SENG403 pres\SENG403\obj\Debug\MainWindow.baml
 C:\Users\Mike\Desktop\SENG403 pres\SENG403\obj\Debug\SENG403.g.resources
 C:\Users\Mike\Desktop\SENG403 pres\SENG403\obj\Debug\SENG403.Properties.Resources.resources
 C:\Users\Mike\Desktop\SENG403 pres\SENG403\obj\Debug\SENG403.csproj.GenerateResource.Cache
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\bin\Debug\SENG403.exe.config
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\bin\Debug\SENG403.exe
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\bin\Debug\SENG403.pdb
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\SENG403.csprojResolveAssemblyReference.cache
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\AlarmWindow.g.cs
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\editSnoozeTime.g.cs
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\MainWindow.g.cs
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\App.g.cs
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\SENG403_MarkupCompile.cache
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\SENG403_MarkupCompile.lref
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\AlarmWindow.baml
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\editSnoozeTime.baml
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\MainWindow.baml
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\SENG403.g.resources
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\SENG403.Properties.Resources.resources
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\SENG403.csproj.GenerateResource.Cache
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\SENG403.exe
+C:\Users\Amir Ahmed\Source\Repos\SENG-403-V2\SENG403 pres\SENG403\obj\Debug\SENG403.pdb

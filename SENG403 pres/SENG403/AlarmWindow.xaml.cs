@@ -58,13 +58,14 @@ namespace SENG403
             this.Hide();
             timer.Tick += timer_Tick;
             timer.Start();
+            MainWindow.mySound.Stop();
         }
 
         // AS SOON AS TIMER IS DONE, timer_Tick METHOD IS CALLED AND MAKES ALARM WINDOW REAPPEAR
         private void timer_Tick(object sender, EventArgs e)
         {
             if (buttonClicked == 0){
-                SystemSounds.Exclamation.Play();
+                MainWindow.mySound.PlayLooping();
                 this.Show();
             }
             else {
@@ -78,6 +79,7 @@ namespace SENG403
         {
             buttonClicked = 1;
             this.Close();
+            MainWindow.mySound.Stop();
         }
     }
 }
