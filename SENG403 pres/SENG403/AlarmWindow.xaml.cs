@@ -70,7 +70,7 @@ namespace SENG403
             }
             else {
 
-                this.Close();
+                this.Close();  
             }
         }
 
