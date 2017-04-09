@@ -28,7 +28,7 @@ namespace SENG403
         private LinkedList<alarmObject> alarmLinkedList;
         alarmObject temp_alarm;
 
-        public static SoundPlayer mySound = new SoundPlayer(@"darthVader.wav");
+        public static SoundPlayer mySound;
 
 
         public MainWindow()
@@ -73,6 +73,12 @@ namespace SENG403
 
             analogCheckBox.Checked += AnalogCheckBox_Checked;
             analogCheckBox.Unchecked += AnalogCheckBox_Unchecked;
+
+            // POPULATING chooseSound COMBOBOX
+            chooseAlarm.Items.Add("Imperial March");
+            chooseAlarm.Items.Add("Samuel Jackson Wake Up!");
+            chooseAlarm.Items.Add("Peaceful Alarm");
+
         }
 
         private void AnalogCheckBox_Unchecked(object sender, RoutedEventArgs e)
@@ -296,6 +302,22 @@ namespace SENG403
 
         }
 
+        private void chooseAlarm_SelectionChanged(object sender, SelectionChangedEventArgs e){
+
+            if (chooseAlarm.SelectedIndex == chooseAlarm.Items.IndexOf("Imperial March")) {
+
+                mySound = new SoundPlayer("darthVader.wav");
+            }
+            else if (chooseAlarm.SelectedIndex == chooseAlarm.Items.IndexOf("Samuel Jackson Wake Up!")) {
+
+                mySound = new SoundPlayer("samuelJacksonWakeUp.wav");
+            }
+            else if (chooseAlarm.SelectedIndex == chooseAlarm.Items.IndexOf("Peaceful Alarm")) {
+
+                mySound = new SoundPlayer("peacefulBlessing.wav");
+            }
+        }
+
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
             alarmName = alarmNameTextBox.Text;
@@ -313,7 +335,7 @@ namespace SENG403
                 {
                     alarmLinkedList.AddLast(newAlarm);
                 }
-                catch(Exception exception)
+                catch (Exception exception)
                 {
                     Console.WriteLine(exception.Message);
                 }
@@ -324,9 +346,9 @@ namespace SENG403
             else
             {
                 MessageBox.Show("Invalid input");
-            }
-           
+            }  
         }
+
         // Object representing the alarm object.
         private class alarmObject{
 

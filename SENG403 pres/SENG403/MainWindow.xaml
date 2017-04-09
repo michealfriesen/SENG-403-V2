@@ -45,21 +45,23 @@
                 <CheckBox x:Name="analogCheckBox" Content="Analog Clock" HorizontalAlignment="Left" Margin="244,15,0,0" VerticalAlignment="Top"/>
             </Grid>
 
-            <Grid x:Name="addAlarmGrid" DockPanel.Dock="Left" Height="222" VerticalAlignment="Center" Width="192">
+            <Grid x:Name="addAlarmGrid" DockPanel.Dock="Left" Height="272" VerticalAlignment="Center" Width="170">
                 <TextBox x:Name="alarmNameTextBox" HorizontalAlignment="Left" Height="23" Margin="10,32,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
                 <TextBox x:Name="alarmDescriptionTextBox" HorizontalAlignment="Left" Height="23" Margin="10,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
                 <Label x:Name="label" Content="Time:" HorizontalAlignment="Left" Margin="7,94,0,0" VerticalAlignment="Top"/>
                 <ComboBox x:Name="hourComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Margin="10,116,0,0"/>
                 <ComboBox x:Name="minuteComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Margin="66,116,0,0"/>
                 <ComboBox x:Name="amPMComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="114,116,0,0" SelectionChanged="amPMComboBox_SelectionChanged"/>
-                <Label x:Name="label1" Content="Date:" HorizontalAlignment="Left" Margin="7,143,0,0" VerticalAlignment="Top"/>
-                <DatePicker x:Name="dateOfAlarm" HorizontalAlignment="Left" Margin="45,145,0,0" VerticalAlignment="Top" Width="116"/>
+                <Label x:Name="label1" Content="Date:" HorizontalAlignment="Left" Margin="6,208,0,-12" VerticalAlignment="Top"/>
+                <DatePicker x:Name="dateOfAlarm" HorizontalAlignment="Left" Margin="44,210,0,-12" VerticalAlignment="Top" Width="116"/>
                 <Label x:Name="label_Copy" Content=":" HorizontalAlignment="Left" Margin="52,112,0,0" VerticalAlignment="Top"/>
-                <Button x:Name="addButton" Content="Add Alarm" HorizontalAlignment="Left" Margin="103,181,0,0" VerticalAlignment="Top" Width="63" Click="addButton_Click" Height="21"/>
+                <Button x:Name="addButton" Content="Add Alarm" HorizontalAlignment="Left" Margin="102,246,0,-45" VerticalAlignment="Top" Width="63" Click="addButton_Click" Height="21"/>
                 <Label x:Name="label_Copy1" Content="Alarm Description:" HorizontalAlignment="Left" Margin="7,51,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="label_Copy2" Content="Alarm Name:" HorizontalAlignment="Left" Margin="7,9,0,0" VerticalAlignment="Top"/>
-                <Button x:Name="cancel" Content="cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="52,181,0,0" Height="22" Click="cancel_Click"/>
-                <Button x:Name="save" Content="save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Margin="-3,181,0,0" Height="22" Click="save_Click"/>
+                <Button x:Name="cancel" Content="cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="46" Margin="51,246,0,-46" Height="22" Click="cancel_Click"/>
+                <Button x:Name="save" Content="save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="48" Margin="-4,246,0,-46" Height="22" Click="save_Click"/>
+                <Label x:Name="label2" Content="Choose Alarm Tone:" Margin="7,138,10,59"/>
+                <ComboBox x:Name="chooseAlarm" HorizontalAlignment="Left" Height="25" Margin="10,163,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.496,0.16" SelectionChanged="chooseAlarm_SelectionChanged"/>
             </Grid>
         </DockPanel>
     </Viewbox>
